@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="normalize.css" >
+    <link rel="stylesheet" href="style.css" >
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="page">
+
+      <div class="header clearfix">
+        <div class="logo">
+          <img src="http://i1.wp.com/www.entrepreneurial-insights.com/wp-content/uploads/2014/10/Medium-logo-dark.png" >
+        </div>
+        <div class="signInButton">Sign in/ Sign up</div>
+        <div class="searchButton"><i class="fa fa-search"></i></div>
+      </div>
+
+      <div class="header2 clearfix">
+        <ul class="iconBarTop">
+          <li><i class="fa fa-heart"></i></li>
+          <li><i class="fa fa-bookmark-o"></i></li>
+          <li><i class="fa fa-laptop"></i></li>
+        </ul>
+      </div>
+
+      <div class="topImage">
+          <img src="https://d262ilb51hltx0.cloudfront.net/max/2000/1*bs9PbxDndAW7mmqve3EQ-w.jpeg">
+      </div>
+
+      <div class="container">
+        <h1 class="mainTitle">React Properties</h1>
+          <div class="content">
+            <p>Last time we looked at components, which are the building blocks of any React-powered interface. Today we will continue to explore them, with a focus on how to customise them.</p>
+            <p>There are a few ways in which React components can be customised, but we’re going pay particular attention to properties. Properties are to React components what attributes are to HTML elements. In fact, their most basic use is in the form of attributes, in JSX.</p>
+            <h2>Defining Properties</h2>
+            <p>If you’re familiar with HTML (and you really should be for this tutorial to make sense) then you know that HTML elements can be customised by the attribute values contained in the opening tag.</p>
+            <p>Given a simple component:</p>
+              <div class="codebox">
+                <code>/*@jsx React.DOM*/
+                  
+                var InterfaceComponent = React.createClass({
+                  render : function() {
+                    return <div>hello world!</div>;
+                  }
+                });</code>
+                </div>
+                <p>We can change the behaviour of this component by altering the contents of the render() method. What if we wanted the behaviour to changed, based on external information? We can use properties!</p>
+                <div class="codebox"><code>
+                                /**
+                 * @jsx React.DOM
+                 */
+                  
+                var InterfaceComponent = React.createClass({
+                  render : function() {
+                    return <div>hello {this.props.name}!</div>;
+                  }
+                });
+
+                React.renderComponent(
+                  < name="chris" />,
+                  document.body
+                );</code>
+                </div>
+                <p>When we provide a name attribute (and value) this gets passed along to the component. If you come from a history of Object Oriented Programming languages, you may thing that these properties are passed to a constructor and that you need to manage them from there. Don’t fall into this trap!</p>
+          </div>
+      </div>
+
+      <div class="footer">
+        <ul class="iconBarBottom">
+          <li><i class="fa fa-heart"></i></li>
+          <li><i class="fa fa-bookmark-o"></i></li>
+          <li><i class="fa fa-laptop"></i></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
